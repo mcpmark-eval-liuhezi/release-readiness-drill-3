@@ -1,0 +1,14 @@
+name: smoke
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deliberate failure (drill fixture)
+        run: |
+          echo "Smoke check starting - this step fails on purpose for the drill"
+          exit 1
